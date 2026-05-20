@@ -10,6 +10,9 @@ const requestRoutes = require('./routes/requests');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Required for Render/Railway/any reverse proxy — must be before rate limiter
+app.set('trust proxy', 1);
+
 // ─── Security Middleware ────────────────────────────────────────────────────
 app.use(helmet());
 
