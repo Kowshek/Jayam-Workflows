@@ -8,8 +8,7 @@ A full-stack application built with **React + Node.js (Express) + PostgreSQL** t
 
 | Service | URL |
 |---------|-----|
-| Frontend | *(Add Vercel URL after deployment)* |
-| Backend API | *(Add Render URL after deployment)* |
+| Frontend | jayam-workflows.vercel.app |
 
 **Test Credentials**
 
