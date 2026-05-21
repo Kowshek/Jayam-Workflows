@@ -12,7 +12,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'My Requests',   to: '/dashboard',  icon: '📋', roles: ['user'] },
-  { label: 'New Request',   to: '/dashboard/new', icon: '✏️', roles: ['user'] },
+  { label: 'New Request',   to: '/dashboard?new=1', icon: '✏️', roles: ['user'] },
   { label: 'Review Queue',  to: '/manager',    icon: '📥', roles: ['manager'] },
   { label: 'All Requests',  to: '/admin',      icon: '🗂️', roles: ['admin'] },
 ];

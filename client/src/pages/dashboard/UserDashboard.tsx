@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { requestsApi } from '../../lib/api';
 import { useAuthStore } from '../../store/authStore';
@@ -25,6 +25,16 @@ export default function UserDashboard() {
   const { user } = useAuthStore();
   const [filters, setFilters] = useState<RequestFilters>({ page: 1, limit: 10 });
   const [showForm, setShowForm] = useState(false);
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  // Open modal if ?new=1 is in the URL (from sidebar link)
+  useEffect(() => {
+    if (searchParams.get('new') === '1') {
+      setShowForm(true);
+      navigate('/dashboard', { replace: true });
+    }
+  }, [searchParams, navigate]);
 
   const { data: statsData, isLoading: statsLoading } = useQuery({
     queryKey: ['stats'],
@@ -113,7 +123,7 @@ export default function UserDashboard() {
                 {requests.map((req) => (
                   <tr key={req.id} className="hover:bg-slate-50/60 transition-colors">
                     <td className="px-5 py-3.5">
-                      <p className="font-medium text-slate-900 truncate max-w-xs">{req.title}</p>
+                      <Link to={`/requests/${req.id}`} className="font-medium text-slate-900 hover:text-indigo-600 truncate max-w-xs block transition-colors">{req.title}</Link>
                     </td>
                     <td className="px-4 py-3.5 text-slate-500">{req.category}</td>
                     <td className="px-4 py-3.5">

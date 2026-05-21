@@ -104,7 +104,7 @@ export default function ManagerDashboard() {
                 {requests.map((req) => (
                   <tr key={req.id} className="hover:bg-slate-50/60 transition-colors">
                     <td className="px-5 py-3.5">
-                      <p className="font-medium text-slate-900 truncate max-w-xs">{req.title}</p>
+                      <Link to={`/requests/${req.id}`} className="font-medium text-slate-900 hover:text-indigo-600 truncate max-w-xs block transition-colors">{req.title}</Link>
                     </td>
                     <td className="px-4 py-3.5 text-slate-500">{req.requester_name}</td>
                     <td className="px-4 py-3.5 text-slate-500">{req.category}</td>
