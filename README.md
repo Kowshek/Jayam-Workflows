@@ -222,19 +222,3 @@ App is at `http://localhost:5173`
 2. Set root directory to `client`
 3. Add env var: `VITE_API_URL=https://your-render-app.onrender.com/api`
 4. Deploy
-
----
-
-## Features Checklist
-
-- [x] **Module 1 — Auth**: JWT login, role-based redirect, token refresh on page reload
-- [x] **Module 2 — Request Creation**: Form with validation (title, description, category, priority)
-- [x] **Module 3 — Workflow Engine**: State machine enforced server-side, all 6 transitions
-- [x] **Module 4 — Action Log**: Every status change logged, timeline UI on request detail
-- [x] **Module 5 — Dashboards**: Role-specific views with filters (status, category, priority, date range) + pagination
-- [x] **Module 6 — Security**: Role middleware, transition validation, input sanitization, rate limiting, helmet
-- [x] **Module 7 — UI Quality**: Sidebar layout, stat cards, status badges, skeleton loading, empty states, toast notifications, responsive
-
----
-
-*Built for Jayam Web Solutions — React Developer Interview Task*
